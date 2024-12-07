@@ -177,10 +177,6 @@ function dropInInventory(e) {
     if (draggingElement) inventory.appendChild(draggingElement);
 }
 
-
-
-
-
 window.onload = initGame;
 
 function retryLevel() {
