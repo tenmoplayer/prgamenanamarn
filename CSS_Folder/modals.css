@@ -499,4 +499,7 @@
         top: 60%;
         gap: 50px;
     }
+    #dark-overlay {
+        height: 750%;
+    }
 }

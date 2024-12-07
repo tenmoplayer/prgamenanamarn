@@ -487,6 +487,11 @@ button:hover {
 
 .popup {
     display: none;
+    left: 50%;
+    transform: translate(-50%);
+    user-select: none;
+    pointer-events: none;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.95);
     padding: 10px;
     border: 1px solid #ccc;
