@@ -3,72 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sort for Treasure</title>
+    <title>Main Menu</title>
     <link rel="stylesheet" href="CSS_Folder/style.css">
-    <link rel="stylesheet" href="CSS_Folder/levelselection.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
-    <style>
-        .content-container {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-        }
-    </style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Persistent Audio -->
-    <audio autoplay loop>
-        <source src="music.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
+    <audio autoplay>
+        <source src="music.mp3">
     </audio>
-
-    <!-- Dynamic Content Area -->
-    <div id="content" class="content-container">
-        <p>Loading...</p>
+    <div class="image-container"></div>
+    <div class="container">
+        <img src="mainmenu.png" style="height: 100%; position: absolute; left: 50%; transform: translate(-50%);">
+        <div class="buttons">
+            <img src="play.png" onclick="window.location.href='levelsection.html';">
+            <img src="question.png">
+        </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const contentDiv = document.getElementById('content');
-
-            // Function to load a specific page
-            const loadPage = (page) => {
-                fetch(page)
-                    .then(response => {
-                        if (!response.ok) throw new Error('Failed to load page');
-                        return response.text();
-                    })
-                    .then(html => {
-                        contentDiv.innerHTML = html;
-
-                        // Reattach scripts if necessary
-                        const scripts = contentDiv.querySelectorAll('script');
-                        scripts.forEach(script => {
-                            const newScript = document.createElement('script');
-                            newScript.src = script.src;
-                            document.body.appendChild(newScript);
-                        });
-                    })
-                    .catch(error => {
-                        contentDiv.innerHTML = `<p>Error: ${error.message}</p>`;
-                    });
-            };
-
-            // Initial load
-            loadPage('MainMenuContent.html');
-
-            // Handle navigation links dynamically
-            document.body.addEventListener('click', (event) => {
-                const target = event.target.closest('[data-page]');
-                if (target) {
-                    event.preventDefault();
-                    const page = target.getAttribute('data-page');
-                    loadPage(page);
-                }
-            });
-        });
-    </script>
 </body>
+<script src="MainMenu.js"></script>
 </html>
