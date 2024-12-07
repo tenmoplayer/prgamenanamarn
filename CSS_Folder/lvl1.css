@@ -7,6 +7,7 @@ body {
     height: 100vh;
     background-size: cover;
     font-family: "Rubik Mono One";
+    overflow: hidden;
 }
 h1 {
     margin: 20px 0;
@@ -41,7 +42,6 @@ h2 {
     border-radius: 20px;
     box-sizing: border-box;
 }
-
 .sorting-boxes {
     width: 40vw;
     height: 100%;
@@ -151,13 +151,7 @@ h2 {
     opacity: 0.5;
 }
 
-.stickman-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    z-index: 2;
-}
+
 
 .empty {
     display: none;
