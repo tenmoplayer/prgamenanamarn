@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 4</title>
+    
+    <link rel="stylesheet" href="CSS_Folder/modals.css">
+    <link rel="stylesheet" href="CSS_Folder/lvl4.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script src="pause.js"></script>
+        <script src="modals.js"></script>
+        <button class="settings-button" onclick="toggleSettingsMenu()">
+            <img src="pauselegit.png"/>
+        </button>
+
+        <div id="settingsModal" class="modal">
+            <div class="setmodal">
+                <img src="CSS_Folder/settings.png">
+                <img src="retry.png" onclick="window.location.href='lvl1.html';" class="setbtn">
+                <img src="levelmenu.png" onclick="window.location.href='levelsection.html';" class="setbtn">
+                <img src="exit.png" onclick="closeSettingsMenu()" class="setbtn">
+                <img src="mute.webp" id="mutesfx" onclick="toggleMuteSFX()" class="setbtn">
+                <img src="bgm.png" id="mutebgm" onclick="toggleMuteBGM()" class="setbtn">
+            </div>
+        </div>
+
+        <h1 style="color: #DA8359; text-shadow: -4px 3px 4px black, 4px 3px 4px black;">Sort <span style="font-size: 20px; color: black; text-shadow: none;">for</span> Treasure</h1>
+
+        <div id="startModal" class="modal">
+            <div class="startcontent">
+                <img src="exit.png" class="wrongbtn" onclick="closeStartModal()">
+                <img src="dark.png" class="intromodal" id="modalImage">
+            </div>
+        </div>
+
+        <div class="main-container">
+            <h1 style="color:#DA8359; text-shadow: -4px 3px 4px black, 4px 3px 4px black;; position: absolute; right: 190px; top: 40px; font-size: 40px;">Level 1</h1>
+            <div class="stickman-box">
+
+                <img src="CSS_Folder/lvl3-4.gif" draggable="false" style="height: 75%; user-select: none; z-index: 1;" id="avatar">
+                <div class="lives-container">
+                    <h2>Lives: <span id="lives">3</span></h2>
+                </div>
+                <div class="watertwo" id="watertwo"></div>
+                <div class="water" id="water"></div>
+                
+            </div>
+        <div class="inventory" id="inventory" style="z-index: 3;">
+            <div id="dark-overlay"></div>
+            <div class="box" draggable="true" id="item19"><img src="level4pics/ACTIVE INGREDIENTS/ACTIVE INGREDIENTS (4).png" id="img19" /></div>
+            <div class="box" draggable="true" id="item13"><img src="level4pics/CLEANING AGENTS/CLEANING AGENTS (1).png" id="img13" /></div>
+            <div class="box" draggable="true" id="item7"><img src="level4pics/COSMETICS/CONSUMER PRODUCT (66).png" id="img7" /></div>
+           
+            <div class="box" draggable="true" id="item24" onmouseover="showPopup1()" onmouseout="hidePopup1()"><img src="level4pics/ACTIVE INGREDIENTS/LVL 4 - IRON.png" id="img19" />
+                <div class="popup1" id="popup1">HINT: <br> Essential for <br> blood production; <br> often included in <br>supplements for anemia.</div>
+            
+            </div>
+
+
+            <div class="box" draggable="true" id="item1"><img src="level4pics/FOOD ADDITIVES/CONSUMER PRODUCT (68).png" id="img1" /></div>
+            
+            <div class="box" draggable="true" id="item20"><img src="level4pics/ACTIVE INGREDIENTS/CONSUMER PRODUCT (66).png" id="img20" /></div>
+            <div class="box" draggable="true" id="item14"><img src="level4pics/CLEANING AGENTS/CONSUMER PRODUCT (66).png" id="img14" /></div>
+            <div class="box" draggable="true" id="item8"><img src="level4pics/COSMETICS/CONSUMER PRODUCT (68).png" id="img8" /></div>
+         
+            <div class="box" draggable="true" id="item5" onmouseover="showPopup2()" onmouseout="hidePopup2()"><img src="level4pics/FOOD ADDITIVES/LVL 4 - IODINE.png" id="img19" />
+                <div class="popup2" id="popup2">HINT: Added as <br> potassium iodide <br> in iodized <br> salt for <br> thyroid health.</div>
+            </div>
+
+
+            <div class="box" draggable="true" id="item2"><img src="level4pics/FOOD ADDITIVES/CONSUMER PRODUCT (69).png" id="img2" /></div>
+
+            <div class="box" draggable="true" id="item21"><img src="level4pics/ACTIVE INGREDIENTS/CONSUMER PRODUCT (67).png" id="img21" /></div>
+            <div class="box" draggable="true" id="item15"><img src="level4pics/CLEANING AGENTS/CONSUMER PRODUCT (67).png" id="img15" /></div>
+            <div class="box" draggable="true" id="item9"><img src="level4pics/COSMETICS/CONSUMER PRODUCT (69).png" id="img9" /></div>
+            <div class="box" draggable="true" id="item3"><img src="level4pics/FOOD ADDITIVES/CONSUMER PRODUCT (71).png" id="img3" /></div>
+            
+            <div class="box" draggable="true" id="item18" onmouseover="showPopup3()" onmouseout="hidePopup3()"><img src="level4pics/CLEANING AGENTS/LVL 4 - NICKEL.png" id="img19" /></div>
+            <div class="popup3" id="popup3">HINT: <br>  Sometimes used <br> in formulations <br> for cleaning <br>stainless steel.</div>
+
+            <div class="box" draggable="true" id="item22"><img src="level4pics/ACTIVE INGREDIENTS/CONSUMER PRODUCT (68).png" id="img22" /></div>
+            <div class="box" draggable="true" id="item16"><img src="level4pics/CLEANING AGENTS/CONSUMER PRODUCT (68).png" id="img16" /></div>
+            <div class="box" draggable="true" id="item10"><img src="level4pics/COSMETICS/COSMETICS (2).png" id="img10" /></div>
+            <div class="box" draggable="true" id="item4"><img src="level4pics/FOOD ADDITIVES/CONSUMER PRODUCT (72).png" id="img4" /></div>
+            
+            <div class="box" draggable="true" id="item11" onmouseover="showPopup4()" onmouseout="hidePopup4()"><img src="level4pics/COSMETICS/LVL 4 - SULFUR.png" id="img19" /></div>
+            <div class="popup4" id="popup4">HINT: <br> well-known for its <br> ability to help <br> treat acne. <br> It works by <br> reducing excess <br> oil on the skin, <br> unclogging pores, <br> and having <br> antibacterial effects.</div>
+
+            <div class="box" draggable="true" id="item23"><img src="level4pics/ACTIVE INGREDIENTS/CONSUMER PRODUCT (69).png" id="img23" /></div>
+            <div class="box" draggable="true" id="item17"><img src="level4pics/CLEANING AGENTS/CONSUMER PRODUCT (69).png" id="img17" /></div>
+            <div class="box" draggable="true" id="item5"><img src="level4pics/FOOD ADDITIVES/FOOD ADDITIVES (3).png" id="img5" /></div>
+            
+            <div id="falling-rocks-inv"></div>
+        </div>
+
+        <div class="sorting-boxes">
+            <div class="container sorting-box" id="sorting-box-1">
+                <div class="sorting-title">Food Additives</div> 
+                <div class="sorting-items"></div>
+            </div>
+            <div class="container sorting-box" id="sorting-box-4">
+                <div class="sorting-title">Active Ingredients</div>
+                <div class="sorting-items"></div>
+            </div>
+            <div class="container sorting-box" id="sorting-box-3">
+                <div class="sorting-title">Cleaning Agents</div>
+                <div class="sorting-items"></div>
+            </div>
+            <div class="container sorting-box" id="sorting-box-2">
+                <div class="sorting-title">Cosmetics</div>
+                <div class="sorting-items"></div>
+            </div>
+        </div>
+
+            
+            
+        </div>
+    
+        
+    </div>
+    <div class="timer-container">
+        <div class="addsecs">
+            <p>+3 secs</p>
+        </div>
+        <div class="minussecs">
+            <p>-10 secs</p>
+        </div>
+        <h2><span id="timer">00:45</span></h2>
+    </div>
+    
+
+    <div id="completionModal" class="modal">
+        <div class="modal-content">
+            <img src="complete.png" style="width: 100%;">
+            <div class="hiddendiv" style="display: none;">
+                <img src="CSS_Folder/REWARD SYSTEM.png" alt="Congratulations!" style="width: 15%; height: auto;" id="treasureimg"/>
+            </div>
+            <div class="treasurecontainer" style="position: absolute; left: 50%; top: 40%; transform: translate(-50%); width: 100%;">
+                
+            </div>
+            <div class="completebtn">
+                <img src="restart.png" onclick="window.location.href='lvl4.html';" >
+                <img src="nextbtn.png" onclick="window.location.href='lvl5.html';" >
+                <img src="levels.png" onclick="window.location.href='levelsection.html';" >
+            </div>
+        </div>
+    </div>
+    
+
+<div id="failedModal" class="modal">
+    <div class="failedcontent">
+        <img src="gameover.png" style="width: 100%;">
+        <div class="gameoverbtns">
+            <img src="restart.png" onclick="window.location.href='lvl4.html';">
+            <img src="levels.png" onclick="window.location.href='levelsection.html';">
+        </div>
+    </div>
+</div>
+    <script src="scriptlevel4.js"></script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+.modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.60); /* Black w/ opacity */
+}
+
+.modal-content {
+    position: absolute;
+    box-sizing: border-box;
+    left: 25%;
+    margin-top: -50px;
+    right: 50%;
+    transform: translate(-50%);
+    width: 50%;
+    user-select: none;
+    -webkit-user-drag: none;
+    animation: slideDown 1s ease-out forwards, swing 6s ease-in-out 1s infinite;
+    z-index: 99;
+}
+
+.close-button {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.wrongbtn {
+    position: absolute;
+    height: 15%;
+    right: 0;
+    margin-top: 200px;
+}
+.wrongbtn:hover {
+    background-color: rgba(236, 236, 236, 0.247);
+    border-radius: 100%;                
+}
+.wrongbutton:hover {
+    background-color: rgba(236, 236, 236, 0.247);
+    border-radius: 100%;
+}
+.intromodal {
+    width: 100%;
+}
+#nextbtnintro {
+    position: absolute;
+    height: 100px;
+    top: 55%;
+    margin-left: -4%;
+}
+.nextprev:hover {
+    opacity: 0.8;
+}
+@keyframes slideUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(50px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+}
+.setmodal.slide-up {
+    animation: slideUp 0.5s forwards; 
+}
+.startcontent.slide-up {
+    animation: slideUp 0.5s forwards; 
+}
+
+.startcontent {
+    position: absolute;
+    left: 25%;
+    margin-top: -50px;
+    right: 50%;
+    transform: translate(-50%);
+    width: 50%;
+    user-select: none;
+    -webkit-user-drag: none;
+    animation: slideDown 1s ease-out forwards, swing 6s ease-in-out 1s infinite;
+    z-index: 99;
+}
+@keyframes slideDown {
+    0% {
+      transform: translateY(-100%); 
+      opacity: 0.85;
+    }
+    100% {
+      transform: translateY(0); 
+      opacity: 1;
+    }
+  }
+@keyframes swing {
+0%, 100% {
+    transform: rotate(0deg); 
+}
+25% {
+    transform: rotate(1deg); 
+}
+50% {
+    transform: rotate(-1deg); 
+}
+75% {
+    transform: rotate(1deg); 
+}
+}
+.failedcontent {
+    position: absolute;
+    left: 25%;
+    margin-top: -50px;
+    right: 50%;
+    transform: translate(-50%);
+    width: 50%;
+    user-select: none;
+    -webkit-user-drag: none;
+    animation: slideDownfail 2s linear, swing 6s ease-in-out 1s infinite;
+    z-index: 99;
+}
+.gameoverbtns {
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 90%;
+    height: 40%;
+    padding: 20px;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gameoverbtns img {
+    height: 100%;
+}
+.gameoverbtns img:hover {
+    opacity: 0.7;
+}
+
+@keyframes slideDownfail {
+    0% {
+        transform: translateY(-100%); 
+        opacity: 0.85;
+    }
+
+    100% {
+        transform: translateY(0); 
+        opacity: 1;
+    }
+}
+
+
+.setmodal {
+    position: absolute;
+    left: 25%;
+    margin-top: -50px;
+    right: 50%;
+    transform: translate(-50%);
+    width: 50%;
+    height: 90vh;
+    user-select: none;
+    -webkit-user-drag: none;
+    animation: slideDown 1s ease-out forwards, swing 6s ease-in-out 1s infinite;
+    z-index: 99;
+    transition: transform 0.5s ease-out; /* Smooth transition for sliding */
+}
+
+.setmodal img {
+    filter: drop-shadow(5px 5px 10px #000000);
+}
+.setbtn:hover {
+    opacity: 0.8;
+}
+.setmodal img:nth-child(1) {
+    height: 100%; 
+    position: absolute; 
+    left: 50%; 
+    transform: translate(-50%);
+    z-index: 20;
+}
+.setmodal img:nth-child(2) {
+    position: absolute;
+    width: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+    z-index: 1000;
+}
+.setmodal img:nth-child(3) {
+    position: absolute;
+    width: 50%;
+    left: 50%;
+    bottom: 10%;
+    transform: translate(-50%);
+    z-index: 1000;
+}
+.setmodal img:nth-child(4) {
+    position: absolute;
+    width: 14%;
+    left: 82%;
+    top: 17%;
+    transform: translate(-50%);
+    z-index: 1000;
+}
+.setmodal img:nth-child(5) {
+    position: absolute;
+    width: 14%;
+    left: 40%;
+    top: 35%;
+    transform: translate(-50%);
+    z-index: 1000;
+}
+.setmodal img:nth-child(6) {
+    position: absolute;
+    width: 14%;
+    right: 25%;
+    top: 35%;
+    transform: translate(-50%);
+    z-index: 1000;
+}
+.settingsvol {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 200px;
+}
+.settings-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.settings-button img,
+.settings-button .fas {
+    width: 60px;
+    height: 60px;
+
+}
+ .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.close-button:hover {
+    color: #ffffff;
+}
+.treasurecontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
+}
+.completebtn {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    position: absolute;
+    width: 100%;
+    height: 30% ;
+    box-sizing: border-box;
+    top: 60%;
+    gap: 50px;
+}
+.completebtn img:hover {
+    opacity: 0.7;
+}

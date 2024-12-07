@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 3</title>
+    
+    <link rel="stylesheet" href="CSS_Folder/modals.css">
+    <link rel="stylesheet" href="CSS_Folder/lvl3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+</head>
+<body>
+        <script src="pause.js"></script>
+        <script src="modals.js"></script>
+        <button class="settings-button" onclick="toggleSettingsMenu()">
+            <img src="pauselegit.png"/>
+        </button>
+
+        <div id="settingsModal" class="modal">
+            <div class="setmodal">
+                <img src="CSS_Folder/settings.png">
+                <img src="retry.png" onclick="window.location.href='lvl1.html';" class="setbtn">
+                <img src="levelmenu.png" onclick="window.location.href='levelsection.html';" class="setbtn">
+                <img src="exit.png" onclick="closeSettingsMenu()" class="setbtn">
+                <img src="mute.webp" id="mutesfx" onclick="toggleMuteSFX()" class="setbtn">
+                <img src="bgm.png" id="mutebgm" onclick="toggleMuteBGM()" class="setbtn">
+            </div>
+        </div>
+
+        <h1 style="color: #DA8359; text-shadow: -4px 3px 4px black, 4px 3px 4px black;">Sort <span style="font-size: 20px; color: black; text-shadow: none;">for</span> Treasure</h1>
+
+        <div id="startModal" class="modal">
+            <div class="startcontent">
+                <img src="exit.png" class="wrongbtn" onclick="closeStartModal()">
+                <img src="20241120_215010.png" class="intromodal" id="modalImage">
+            </div>
+        </div>
+
+        <div class="main-container">
+            <h1 style="color:#DA8359; text-shadow: -4px 3px 4px black, 4px 3px 4px black;; position: absolute; right: 190px; top: 40px; font-size: 40px;">Level 1</h1>
+            <div class="stickman-box">
+
+                <img src="CSS_Folder/lvl3-4.gif" draggable="false" style="height: 75%; user-select: none;" id="avatar">
+                <div class="lives-container">
+                    <h2>Lives: <span id="lives">3</span></h2>
+                </div>
+                <div class="watertwo" id="watertwo"></div>
+                <div class="water" id="water"></div>
+                
+            </div>
+        <div class="inventory" id="inventory">
+            
+            <div class="box" draggable="true" id="item19"><img src="level3pics/ACTIVE INGREDIENT/ACTIVE INGREDIENTS 31.png" id="img19" /></div>
+
+            <div class="box" draggable="true" id="item12" onmouseover="showPopup3()" onmouseout="hidePopup3()" ><img src="level3pics/COSMETICS/LVL 3 - MAGNESIUM.png" id="img7"/></div>
+            <div class="popup3" id="popup3">HINT: <br> Used in some <br> mineral makeup <br> and as <br> a skin <br> smoothing agent</div>
+
+           
+            <div class="box" draggable="true" id="item13"><img src="level3pics/CLEANING AGENT/CLEANING AGENTS 33.png" id="img13" /></div>
+            <div class="box" draggable="true" id="item7"><img src="level3pics/COSMETICS/COSMETICS  31.png" id="img7" /></div>
+            <div class="box" draggable="true" id="item1"><img src="level3pics/FOOD ADDITIVES/ FOOD  ADDITIVES 31.png" id="img1" /></div>
+            
+            <div class="box" draggable="true" id="item20"><img src="level3pics/ACTIVE INGREDIENT/ACTIVE INGREDIENTS 32.png" id="img20" /></div>
+            <div class="box" draggable="true" id="item14"><img src="level3pics/CLEANING AGENT/CLEANING AGENTS 34.png" id="img14" /></div>
+            <div class="box" draggable="true" id="item8"><img src="level3pics/COSMETICS/COSMETICS 32.png" id="img8" /></div>
+            <div class="box" draggable="true" id="item2"><img src="level3pics/FOOD ADDITIVES/FOOD  ADDITIVES 33.png" id="img2" /></div>
+
+            <div class="box" draggable="true" id="item5" onmouseover="showPopup2()" onmouseout="hidePopup2()"><img src="level3pics/FOOD ADDITIVES/LVL 3 - HYDROGEN.png" id="img2" /></div>
+            <div class="popup2" id="popup2">HINT: <br> Helps keep <br> foods moist by <br> trapping water <br> inside</div>
+
+
+            
+            <div class="box" draggable="true" id="item21"><img src="level3pics/ACTIVE INGREDIENT/ACTIVE INGREDIENTS 38.png" id="img21" /></div>
+            <div class="box" draggable="true" id="item15"><img src="level3pics/CLEANING AGENT/CLEANING AGENTS 36.png" id="img15" /></div>
+            <div class="box" draggable="true" id="item9"><img src="level3pics/COSMETICS/COSMETICS 33.png" id="img9" /></div>
+            <div class="box" draggable="true" id="item3"><img src="level3pics/FOOD ADDITIVES/FOOD  ADDITIVES 34.png" id="img3" /></div>
+            
+            <div class="box" draggable="true" id="item24" onmouseover="showPopup1()" onmouseout="hidePopup1()"><img src="level3pics/ACTIVE INGREDIENT/LVL 3 - CALCIUM.png" id="img19" /></div>
+            <div class="popup1" id="popup1">HINT: <br> Important for  <br> bone health  <br> found in  <br> supplements and  <br> some topical <br> treatments</div>
+
+
+            <div class="box" draggable="true" id="item22"><img src="level3pics/ACTIVE INGREDIENT/ACTIVE INGREDIENTS 34.png" id="img22" /></div>
+            <div class="box" draggable="true" id="item16"><img src="level3pics/CLEANING AGENT/CLEANING AGENTS 37.png" id="img16" /></div>
+            <div class="box" draggable="true" id="item10"><img src="level3pics/COSMETICS/COSMETICS 36.png" id="img10" /></div>
+            <div class="box" draggable="true" id="item4"><img src="level3pics/FOOD ADDITIVES/FOOD  ADDITIVES 35.png" id="img4" /></div>
+            
+            <div class="box" draggable="true" id="item23"><img src="level3pics/ACTIVE INGREDIENT/ACTIVE INGREDIENTS 35.png" id="img23" /></div>
+            <div class="box" draggable="true" id="item17"><img src="level3pics/CLEANING AGENT/CLEANING AGENTS 38.png" id="img17" /></div>
+            <div class="box" draggable="true" id="item11"><img src="level3pics/COSMETICS/COSMETICS 38.png" id="img11" /></div>
+
+            
+            <div id="falling-rocks-inv"></div>
+        </div>
+
+        <div class="sorting-boxes">
+            <div class="container sorting-box" id="sorting-box-1">
+                <div class="sorting-title">Food Additives</div>
+                <div class="sorting-items"></div>
+            </div>
+            <div class="container sorting-box" id="sorting-box-4">
+                <div class="sorting-title">Active Ingredients</div>
+                <div class="sorting-items"></div>
+            </div>
+            <div class="container sorting-box" id="sorting-box-3">
+                <div class="sorting-title">Cleaning Agents</div>
+                <div class="sorting-items"></div>
+            </div>
+            <div class="container sorting-box" id="sorting-box-2">
+                <div class="sorting-title">Cosmetics</div>
+                <div class="sorting-items"></div>
+            </div>
+        </div>
+
+            
+            
+        </div>
+    
+        
+    </div>
+
+ 
+
+    
+    <div class="timer-container">
+        <div class="addsecs">
+            <p>+3 secs</p>
+        </div>
+        <div class="minussecs">
+            <p>-10 secs</p>
+        </div>
+        <h2><span id="timer">01:00</span></h2>
+    </div>
+
+    <div id="completionModal" class="modal">
+        <div class="modal-content">
+            <img src="complete.png" style="width: 100%;">
+            <div class="hiddendiv" style="display: none;">
+                <img src="CSS_Folder/REWARD SYSTEM.png" alt="Congratulations!" style="width: 15%; height: auto;" id="treasureimg"/>
+            </div>
+            <div class="treasurecontainer" style="position: absolute; left: 50%; top: 40%; transform: translate(-50%); width: 100%;">
+                
+            </div>
+            <div class="completebtn">
+                <img src="restart.png" onclick="window.location.href='lvl3.html';" >
+                <img src="nextbtn.png" onclick="window.location.href='lvl4.html';" >
+                <img src="levels.png" onclick="window.location.href='levelsection.html';" >
+            </div>
+        </div>
+    </div>
+
+    <div id="failedModal" class="modal">
+        <div class="failedcontent">
+            <img src="gameover.png" style="width: 100%;">
+            <div class="gameoverbtns">
+                <img src="restart.png" onclick="window.location.href='lvl3.html';">
+                <img src="levels.png" onclick="window.location.href='levelsection.html';">
+            </div>
+        </div>
+    </div>
+    <script src="scriptlevel3.js"></script>
+</body>
+</html>

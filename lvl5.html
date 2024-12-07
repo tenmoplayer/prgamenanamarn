@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 5</title>
+    
+    <link rel="stylesheet" href="CSS_Folder/modals.css">
+    <link rel="stylesheet" href="CSS_Folder/lvl5.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <img src="vignette.png" style="position: absolute; width: 100vw; height: 100vh; -webkit-user-drag: none; z-index: 2; pointer-events: none; opacity: 80%;">
+    <script src="pause.js"></script>
+        <script src="modals.js"></script>
+        <button class="settings-button" onclick="toggleSettingsMenu()">
+            <img src="pauselegit.png"/>
+        </button>
+
+        <div id="settingsModal" class="modal">
+            <div class="setmodal">
+                <img src="CSS_Folder/settings.png">
+                <img src="retry.png" onclick="window.location.href='lvl1.html';" class="setbtn">
+                <img src="levelmenu.png" onclick="window.location.href='levelsection.html';" class="setbtn">
+                <img src="exit.png" onclick="closeSettingsMenu()" class="setbtn">
+                <img src="mute.webp" id="mutesfx" onclick="toggleMuteSFX()" class="setbtn">
+                <img src="bgm.png" id="mutebgm" onclick="toggleMuteBGM()" class="setbtn">
+            </div>
+        </div>
+
+        <h1 style="color: #DA8359; text-shadow: -4px 3px 4px black, 4px 3px 4px black;">Sort <span style="font-size: 20px; color: black; text-shadow: none;">for</span> Treasure</h1>
+
+        <div id="startModal" class="modal">
+            <div class="startcontent">
+                <img src="exit.png" class="wrongbtn" onclick="closeStartModal()">
+                <img src="dangeer.png" class="intromodal" id="modalImage">
+            </div>
+        </div>
+
+        <div class="main-container">
+            <h1 style="color:#DA8359; text-shadow: -4px 3px 4px black, 4px 3px 4px black;; position: absolute; right: 190px; top: 40px; font-size: 40px;">Level 1</h1>
+            <div class="stickman-box">
+
+                <img src="CSS_Folder/lvl3-4.gif" draggable="false" style="height: 75%; user-select: none; z-index: 1;" id="avatar">
+                <div class="lives-container">
+                    <h2>Lives: <span id="lives">1</span></h2>
+                </div>
+                <div class="watertwo" id="watertwo"></div>
+                <div class="water" id="water"></div>
+                
+        </div>
+        
+        <div class="inventory" id="inventory">
+            <!-- Dark Overlay -->
+            <div id="dark-overlay"></div>
+        
+            <!-- Active Ingredients -->
+            <div class="box" draggable="true" id="item1">
+                <img src="level5pics/ACTIVE INGREDIENTS/ACTIVE INGREDIENTS (4).png" id="img1" />
+            </div>
+            <div class="box" draggable="true" id="item2">
+                <img src="level5pics/ACTIVE INGREDIENTS/CONSUMER PRODUCT (67).png" style="filter: blur(5px);" id="img2" onmouseover="showPopup2()" onmouseout="hidePopup2()" />
+                <div class="popup" id="popup2">HINT:<br>Helps curing migraines and improves sleep quality.</div>
+            </div>
+            <div class="box" draggable="true" id="item3">
+                <img src="level5pics/ACTIVE INGREDIENTS/CONSUMER PRODUCT (68).png" id="img3" />
+            </div>
+            <div class="box" draggable="true" id="item4">
+                <img src="level5pics/ACTIVE INGREDIENTS/CONSUMER PRODUCT (69).png" id="img4" />
+            </div>
+            <div class="box" draggable="true" id="item5">
+                <img src="level5pics/ACTIVE INGREDIENTS/CONSUMER PRODUCT (70).png" id="img5" />
+            </div>
+        
+            <!-- Cleaning Agents -->
+            <div class="box" draggable="true" id="item6">
+                <img src="level5pics/CLEANING AGENTS/CLEANING AGENTS (1).png" style="filter: blur(5px);" id="img6" onmouseover="showPopup6()" onmouseout="hidePopup6()" />
+                <div class="popup" id="popup6">HINT:<br>Softens clotted litter and blockage on drains.</div>
+            </div>
+            <div class="box" draggable="true" id="item7">
+                <img src="level5pics/CLEANING AGENTS/CONSUMER PRODUCT (66).png" id="img7" />
+            </div>
+            <div class="box" draggable="true" id="item8">
+                <img src="level5pics/CLEANING AGENTS/CONSUMER PRODUCT (67).png" id="img8" />
+            </div>
+            <div class="box" draggable="true" id="item9">
+                <img src="level5pics/CLEANING AGENTS/CONSUMER PRODUCT (68).png" id="img9" />
+            </div>
+            <div class="box" draggable="true" id="item10">
+                <img src="level5pics/CLEANING AGENTS/CONSUMER PRODUCT (70).png" style="filter: blur(5px);" id="img10" onmouseover="showPopup10()" onmouseout="hidePopup10()" />
+                <div class="popup" id="popup10">HINT:<br>Softens molds for easier bathroom cleaning.</div>
+            </div>
+        
+            <!-- Food Additives -->
+            <div class="box" draggable="true" id="item11">
+                <img src="level5pics/FOOD ADDITIVES/CONSUMER PRODUCT (66).png" id="img11" />
+            </div>
+            <div class="box" draggable="true" id="item12">
+                <img src="level5pics/FOOD ADDITIVES/CONSUMER PRODUCT (67).png" id="img12" />
+            </div>
+            <div class="box" draggable="true" id="item13">
+                <img src="level5pics/FOOD ADDITIVES/CONSUMER PRODUCT (68).png" id="img13" />
+            </div>
+            <div class="box" draggable="true" id="item14">
+                <img src="level5pics/FOOD ADDITIVES/CONSUMER PRODUCT (69).png" style="filter: blur(5px);" id="img14" onmouseover="showPopup14()" onmouseout="hidePopup14()" />
+                <div class="popup" id="popup14">HINT:<br>Transports higher temperatures than water while adding flavor.</div>
+            </div>
+            <div class="box" draggable="true" id="item15">
+                <img src="level5pics/FOOD ADDITIVES/CONSUMER PRODUCT (70).png" id="img15" />
+            </div>
+            <div class="box" draggable="true" id="item16">
+                <img src="level5pics/FOOD ADDITIVES/CONSUMER PRODUCT (71).png" style="filter: blur(5px);" id="img16" onmouseover="showPopup16()" onmouseout="hidePopup16()" />
+                <div class="popup" id="popup16">HINT:<br>Changes the color of food, making it more appealing.</div>
+            </div>
+        
+            <!-- Cosmetics -->
+            <div class="box" draggable="true" id="item17">
+                <img src="level5pics/COSMETICS/CONSUMER PRODUCT (66).png" style="filter: blur(5px);" id="img17" onmouseover="showPopup17()" onmouseout="hidePopup17()" />
+                <div class="popup" id="popup17">HINT:<br>Moisturizes and nourishes the lips.</div>
+            </div>
+            <div class="box" draggable="true" id="item18" >
+                <img src="level5pics/COSMETICS/CONSUMER PRODUCT (67).png" style="filter: blur(5px);" id="img18" onmouseover="showPopup18()" onmouseout="hidePopup18()" />
+                <div class="popup" id="popup18">HINT:<br>Cleanses and moisturizes the face.</div>
+            </div>
+            <div class="box" draggable="true" id="item19">
+                <img src="level5pics/COSMETICS/CONSUMER PRODUCT (68).png" style="filter: blur(5px);" id="img19" onmouseover="showPopup19()" onmouseout="hidePopup19()" />
+                <div class="popup" id="popup19">HINT:<br>Reduces itchiness and moisturizes dry skin underneath the beard.</div>
+            </div>
+            <div class="box" draggable="true" id="item20">
+                <img src="level5pics/COSMETICS/CONSUMER PRODUCT (69).png" id="img20" />
+            </div>
+            <div class="box" draggable="true" id="item21">
+                <img src="level5pics/COSMETICS/CONSUMER PRODUCT (70).png" id="img21" />
+            </div>
+            <div class="box" draggable="true" id="item22">
+                <img src="level5pics/COSMETICS/COSMETICS (2).png" id="img22" />
+            </div>
+        
+            <!-- Elements -->
+            <div class="box" draggable="true" id="item23">
+                <img src="level5pics/ELEMENTS/LVL 5 - CHROMIUM.png" id="img23" onmouseover="showPopup23()" onmouseout="hidePopup23()" />
+                <div class="popup" id="popup23">HINT:<br>Used in dietary supplements for glucose metabolism support.</div>
+            </div>
+            <div class="box" draggable="true" id="item24">
+                <img src="level5pics/ELEMENTS/LVL 5 - MANGANESE.png" id="img24" onmouseover="showPopup24()" onmouseout="hidePopup24()" />
+                <div class="popup" id="popup24">HINT:<br>Used in formulations for its catalytic properties in removing stains.</div>
+            </div>
+            <div class="box" draggable="true" id="item25">
+                <img src="level5pics/ELEMENTS/LVL 5 - SILICON.png" id="img25" onmouseover="showPopup25()" onmouseout="hidePopup25()" />
+                <div class="popup" id="popup25">HINT:<br>Used in silicones for smooth texture and shine in hair and skin products.</div>
+            </div>
+            <div class="box" draggable="true" id="item26">
+                <img src="level5pics/ELEMENTS/LVL 5 - BORON.png" id="img26" onmouseover="showPopup26()" onmouseout="hidePopup26()" />
+                <div class="popup" id="popup26">HINT:<br>Sometimes used in anti-inflammatory medications and supplements.</div>
+            </div>
+        </div>
+        
+            
+        <div class="sorting-boxes">
+            <div class="container sorting-box" id="sorting-box-1">
+                <div class="sorting-title">Food Additives</div> 
+                <div class="sorting-items"></div>
+            </div>
+            <div class="container sorting-box" id="sorting-box-4">
+                <div class="sorting-title">Active Ingredients</div>
+                <div class="sorting-items"></div>
+            </div>
+            <div class="container sorting-box" id="sorting-box-3">
+                <div class="sorting-title">Cleaning Agents</div>
+                <div class="sorting-items"></div>
+            </div>
+            <div class="container sorting-box" id="sorting-box-2">
+                <div class="sorting-title">Cosmetics</div>
+                <div class="sorting-items"></div>
+            </div>
+        </div>
+
+            
+            
+        </div>
+    
+        
+    </div>
+    <div class="timer-container">
+        <div class="addsecs">
+            <p>+3 secs</p>
+        </div>
+        <div class="minussecs">
+            <p>-10 secs</p>
+        </div>
+        <h2><span id="timer">00:45</span></h2>
+    </div>
+    
+
+    <div id="completionModal" class="modal">
+        <div class="modal-content">
+            <img src="complete.png" style="width: 100%;">
+            <div class="hiddendiv" style="display: none;">
+                <img src="CSS_Folder/REWARD SYSTEM.png" alt="Congratulations!" style="width: 15%; height: auto;" id="treasureimg"/>
+            </div>
+            <div class="treasurecontainer" style="position: absolute; left: 50%; top: 40%; transform: translate(-50%); width: 100%;">
+                
+            </div>
+            <div class="completebtn">
+                <img src="qr.jpg" onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLSfp4SYg_-to9MqnDQFa94-uyI3YaOEOuy17aTd1eVHOiyx7qA/viewform?usp=sharing';" target:>
+                <div class="qr"> What did you think? Any reactions? Take a Survey and help us out!</div>
+                <img src="levels.png" onclick="window.location.href='levelsection.html';" >
+            </div>
+        </div>
+    </div>
+    
+
+<div id="failedModal" class="modal">
+    <div class="failedcontent">
+        <img src="gameover.png" style="width: 100%;">
+        <div class="gameoverbtns">
+            <img src="restart.png" onclick="window.location.href='lvl5.html';">
+            <img src="levels.png" onclick="window.location.href='levelsection.html';">
+        </div>
+    </div>
+</div>
+    <script src="scriptlevel5.js"></script>
+</body>
+</html>
