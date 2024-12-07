@@ -78,15 +78,51 @@ function resetSortingBoxes() {
 items.forEach(item => {
     item.addEventListener('dragstart', dragStart);
     item.addEventListener('dragend', dragEnd);
+    // Add touch events
+    item.addEventListener('touchstart', touchStart);
+    item.addEventListener('touchend', touchEnd);
 });
 
 sortingBoxes.forEach(box => {
     box.addEventListener('dragover', dragOver);
     box.addEventListener('drop', dropInBox);
+    // Add touch events for sorting boxes
+    box.addEventListener('touchmove', touchMove);
+    box.addEventListener('touchend', dropInBox);
 });
 
 inventory.addEventListener('dragover', dragOver);
 inventory.addEventListener('drop', dropInInventory);
+// Add touch events for inventory
+inventory.addEventListener('touchmove', touchMove);
+inventory.addEventListener('touchend', dropInInventory);
+function touchStart(e) {
+    if (gamePaused) return;
+    const touch = e.touches[0]; // Get the first touch
+    const target = document.elementFromPoint(touch.clientX, touch.clientY);
+    if (target && target.classList.contains('box')) {
+        target.classList.add('dragging');
+    }
+}
+
+function touchMove(e) {
+    if (gamePaused) return;
+    const touch = e.touches[0];
+    const target = document.elementFromPoint(touch.clientX, touch.clientY);
+    if (target && target !== e.target) {
+        target.classList.add('dragging');
+    }
+}
+
+function touchEnd(e) {
+    if (gamePaused) return;
+    const touch = e.changedTouches[0];
+    const target = document.elementFromPoint(touch.clientX, touch.clientY);
+    if (target) {
+        target.classList.remove('dragging');
+    }
+}
+
 
 function updateWaterLevel() {
     const waterLevel = ((maxTime - timer) / maxTime) * 100;
@@ -97,8 +133,15 @@ function updateWaterLevel() {
 
 function dragOver(e) {
     if (gamePaused) return;
-    e.preventDefault();
+    e.preventDefault(); // Prevent the default action for both mouse and touch
 }
+
+function touchMove(e) {
+    if (gamePaused) return;
+    e.preventDefault(); // Prevent the default action for touch events
+    // Same logic as dragOver for touchmove
+}
+
 
 function dragStart(e) {
     if (gamePaused) return;
@@ -190,3 +233,16 @@ function retryLevel() {
 function openLevelMenu() {
     location.href = 'levelsection.html';
 }
+items.forEach(item => {
+    item.addEventListener('touchstart', touchStart);
+    item.addEventListener('touchmove', touchMove);
+    item.addEventListener('touchend', touchEnd);
+});
+
+sortingBoxes.forEach(box => {
+    box.addEventListener('touchstart', touchOverBox);
+    box.addEventListener('touchend', touchDropInBox);
+});
+
+inventory.addEventListener('touchstart', touchOverInventory);
+inventory.addEventListener('touchend', touchDropInInventory);
