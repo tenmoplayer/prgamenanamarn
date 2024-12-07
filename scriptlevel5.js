@@ -177,9 +177,9 @@ function dropInBox(e) {
 document.addEventListener("DOMContentLoaded", () => {
     const inventory = document.getElementById("inventory");
     const rockImages = [
-        "rocksthree.png", // Image for 0 clicks
-        "rockstwo.png", // Image for 1 click
-        "rocks1.png", // Image for 2 clicks
+        "miscimages/rocksthree.png", // Image for 0 clicks
+        "miscimages/rockstwo.png", // Image for 1 click
+        "miscimages/rocks1.png", // Image for 2 clicks
     ];
 
     // Function to change the cursor when a rock is clicked and revert after a delay
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const rock = document.createElement("div");
         rock.classList.add("rockk");
         const rockImage = document.createElement("img");
-        rockImage.src = "rocksthree.png"; // Replace with your rock image path
+        rockImage.src = "miscimages/rocksthree.png"; // Replace with your rock image path
         rockImage.alt = "Rock"; // Alt text for accessibility
 
         // Append the image to the rock div
@@ -278,7 +278,7 @@ function playSound(src) {
 
 function displayErrorImage(x, y) {
     const errorImage = document.createElement('img');
-    errorImage.src = 'ekis.png'; 
+    errorImage.src = 'miscimages/ekis.png'; 
     errorImage.style.position = 'absolute';
     errorImage.style.left = `${x}px`;
     errorImage.style.top = `${y}px`;

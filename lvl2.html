@@ -14,17 +14,17 @@
     <script src="pause.js"></script>
     <script src="modals.js"></script>
         <button class="settings-button" onclick="toggleSettingsMenu()">
-            <img src="pauselegit.png"/>
+            <img src="buttons/pauselegit.png"/>
         </button>
 
         <div id="settingsModal" class="modal">
             <div class="setmodal">
                 <img src="CSS_Folder/settings.png">
-                <img src="retry.png" onclick="window.location.href='lvl1.html';" class="setbtn">
-                <img src="levelmenu.png" onclick="window.location.href='levelsection.html';" class="setbtn">
-                <img src="exit.png" onclick="closeSettingsMenu()" class="setbtn">
-                <img src="mute.webp" id="mutesfx" onclick="toggleMuteSFX()" class="setbtn">
-                <img src="bgm.png" id="mutebgm" onclick="toggleMuteBGM()" class="setbtn">
+                <img src="buttons/retry.png" onclick="window.location.href='lvl1.html';" class="setbtn">
+                <img src="buttons/levelmenu.png" onclick="window.location.href='levelsection.html';" class="setbtn">
+                <img src="buttons/exit.png" onclick="closeSettingsMenu()" class="setbtn">
+                <img src="buttons/mute.webp" id="mutesfx" onclick="toggleMuteSFX()" class="setbtn">
+                <img src="buttons/bgm.png" id="mutebgm" onclick="toggleMuteBGM()" class="setbtn">
             </div>
         </div>
 
@@ -32,8 +32,8 @@
 
         <div id="startModal" class="modal">
             <div class="startcontent">
-                <img src="exit.png" class="wrongbtn" onclick="closeStartModal()">
-                <img src="tip.png" class="intromodal" id="modalImage">
+                <img src="buttons/exit.png" class="wrongbtn" onclick="closeStartModal()">
+                <img src="modalcontents/tip.png" class="intromodal" id="modalImage">
             </div>
         </div>
 
@@ -198,7 +198,7 @@
 
     <div id="completionModal" class="modal">
         <div class="modal-content">
-            <img src="complete.png" style="width: 100%;">
+            <img src="modalcontents/complete.png" style="width: 100%;">
             <div class="hiddendiv" style="display: none;">
                 <img src="CSS_Folder/REWARD SYSTEM.png" alt="Congratulations!" style="width: 15%; height: auto;" id="treasureimg"/>
             </div>
@@ -206,9 +206,9 @@
                 
             </div>
             <div class="completebtn">
-                <img src="restart.png" onclick="window.location.href='lvl2.html';" >
-                <img src="nextbtn.png" onclick="window.location.href='lvl3.html';" >
-                <img src="levels.png" onclick="window.location.href='levelsection.html';" >
+                <img src="buttons/restart.png" onclick="window.location.href='lvl2.html';" >
+                <img src="buttons/nextbtn.png" onclick="window.location.href='lvl3.html';" >
+                <img src="buttons/levels.png" onclick="window.location.href='levelsection.html';" >
             </div>
         </div>
     </div>
@@ -217,10 +217,10 @@
         
     <div id="failedModal" class="modal">
         <div class="failedcontent">
-            <img src="gameover.png" style="width: 100%;">
+            <img src="modalcontents/gameover.png" style="width: 100%;">
             <div class="gameoverbtns">
-                <img src="restart.png" onclick="window.location.href='lvl2.html';">
-                <img src="levels.png" onclick="window.location.href='levelsection.html';">
+                <img src="buttons/restart.png" onclick="window.location.href='lvl2.html';">
+                <img src="buttons/levels.png" onclick="window.location.href='levelsection.html';">
             </div>
         </div>
     </div>

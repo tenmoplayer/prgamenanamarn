@@ -174,7 +174,7 @@ function dropInBox(e) {
 
 function displayErrorImage(x, y) {
     const errorImage = document.createElement('img');
-    errorImage.src = 'ekis.png'; 
+    errorImage.src = 'miscimages/ekis.png'; 
     errorImage.style.position = 'absolute';
     errorImage.style.left = `${x}px`;
     errorImage.style.top = `${y}px`;
