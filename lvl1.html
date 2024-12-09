@@ -14,12 +14,22 @@
     
 </head> 
 <body draggable="false">
+    <div class="tipmodal" id="active">
+        <p>ACTIVE</p>
+    </div>
+    <div class="tipmodal" id="cleaning">
+       <p>CLEANING</p>
+    </div>
+    <div class="tipmodal" id="cosmetics">
+        <p>COSMETICS </p>
+    </div>
+
     <script src="pause.js"></script>
     <script src="modals.js"></script>
     <button class="settings-button" onclick="toggleSettingsMenu()">
         <img src="buttons/pauselegit.png"/>
     </button>
-
+    
     <div id="settingsModal" class="modal">
         <div class="setmodal">
             <img src="CSS_Folder/settings.png">
@@ -68,26 +78,31 @@
             <div class="box" draggable="true" id="item3"><img src="level1pics/FOOD ADDITIVES/KNORR LIQUID SEASONING.png" id="item3" /></div>
             <div class="box" draggable="true" id="item8"><img src="level1pics/COSMETICS/BRONZER.png" id="item8" /></div>
 
-            <div class="box" draggable="true" id="item9"><img src="level1pics/COSMETICS/BRONZER.png" id="item9" /></div>
+            <div class="box" draggable="true" id="item9"><img src="level1pics/COSMETICS/MASCARA.png" id="item9" /></div>
             <div class="box" draggable="true" id="item1"><img src="level1pics/FOOD ADDITIVES/SILVER SWAN SOY SAUCE.png" id="item1" /></div>
             <div class="box" draggable="true" id="item10"><img src="level1pics/COSMETICS/LIPSTICK.png" id="item10" /></div>
             <div class="box" draggable="true" id="item19"><img src="level1pics/ACTIVE INGREDIENTS/CONSUMER PRODUCT (63).png" id="item19" /></div>
         </div>
         <div class="sorting-boxes">
             <div class="container sorting-box" id="sorting-box-1">
-                <div class="sorting-title">Food Additives</div>
+                
+                <div class="sorting-title" onmouseover="showtipfood()" onmouseout="removetipf()">Food Additives
+                    <div class="tipmodal" id="foodadditives">
+                        <p>Food additives are substances added to food to <br>enhance flavor, appearance, texture, or <br> shelf life. They include preservatives, flavorings, <br> colorings, and emulsifiers, ensuring food safety, <br> quality, and appeal.</p>
+                     </div>
+                </div>
                 <div class="sorting-items"></div>
             </div>
             <div class="container sorting-box" id="sorting-box-4">
-                <div class="sorting-title">Active Ingredients</div>
+                <div class="sorting-title" onmouseover="showtipactive()" onmouseout="removetipa()">Active Ingredients</div>
                 <div class="sorting-items"></div>
             </div>
             <div class="container sorting-box" id="sorting-box-3">
-                <div class="sorting-title">Cleaning Agents</div>
+                <div class="sorting-title" onmouseover="showtipclean()" onmouseout="removetipc()">Cleaning Agents</div>
                 <div class="sorting-items"></div>
             </div>
             <div class="container sorting-box" id="sorting-box-2">
-                <div class="sorting-title">Cosmetics</div>
+                <div class="sorting-title" onmouseover="showtipcosmetics()" onmouseout="removetipco()">Cosmetics</div>
                 <div class="sorting-items"></div>
             </div>
         </div>

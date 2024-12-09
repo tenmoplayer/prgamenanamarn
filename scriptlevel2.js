@@ -51,7 +51,9 @@ function initGame() {
     livesDisplay.textContent = lives;
     gamePaused = true;
     resetSortingBoxes();
-    // Set the game as not paused and start the timer
+    audio = new Audio('lvl1bgm.mp3');  // Initialize the audio object
+    audio.loop = true; // Ensure the BGM loops
+    audio.play();
     startTimer();
 
 }
@@ -204,6 +206,7 @@ function countCorrectItemsInBox(boxId) {
     
     return correctCount === correctItems.length;
 }
+
 
 
 function showPopup1() {
@@ -384,4 +387,6 @@ function checkLevelFail() {
     const modal = document.getElementById('failedModal');
     if (modal) modal.style.display = 'block';
 }
+
+
 window.onload = initGame;

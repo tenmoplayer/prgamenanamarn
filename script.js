@@ -23,6 +23,7 @@ const itemToBox = {
     'item19': 'sorting-box-4', 'item20': 'sorting-box-4', 'item21': 'sorting-box-4', 'item22': 'sorting-box-4',
 };
 
+
 let gamePaused = true; 
 
 function initGame() {

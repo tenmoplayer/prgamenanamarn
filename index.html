@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
 </head>
 <body>
+    
     <audio autoplay>
         <source src="music.mp3">
     </audio>
@@ -17,9 +18,15 @@
     <div class="container">
         <img src="modalcontents/mainmenu.png" style="height: 100%; position: absolute; left: 50%; transform: translate(-50%);">
         <div class="buttons">
-            <img src="buttons/play.png" onclick="window.location.href='levelsection.html';">
-            <img src="buttons/question.png">
+            <img src="buttons/play.png" onclick="window.location.href='levelsection.html';"> 
+            <img src="buttons/question.png" onmouseover="showquestion()" onmouseout="removequestion()">
+
+            </div>
         </div>
+    </div>
+    
+    <div class="question" id="question">
+<p>ahahahahah</p> 
     </div>
 </body>
 <script src="MainMenu.js"></script>

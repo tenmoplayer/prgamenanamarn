@@ -34,3 +34,12 @@ function spawnFallingImages() {
 
 // Call the function at intervals to keep spawning images
 setInterval(spawnFallingImages, 1000); // Spawns an image every second
+
+const question = document.getElementById('question');
+function showquestion() {
+    question.style.display = 'block';
+
+}
+function removequestion() {
+    question.style.display = 'none';
+}

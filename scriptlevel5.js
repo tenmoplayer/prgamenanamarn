@@ -147,6 +147,13 @@ function dropInBox(e) {
     const correctBox = itemToBox[itemID] === e.currentTarget.id;
 
     if (correctBox) {
+        // Remove any attached rock
+        const attachedRock = draggingElement.querySelector('.rockk');
+        if (attachedRock) {
+            attachedRock.remove();
+            rocksPresent--;
+        }
+
         playCorrectSound();
         e.currentTarget.querySelector('.sorting-items').appendChild(draggingElement);
         timer = Math.min(timer + 3, maxTime);
@@ -174,6 +181,7 @@ function dropInBox(e) {
         updateTimerDisplay();
     }
 }
+
 document.addEventListener("DOMContentLoaded", () => {
     const inventory = document.getElementById("inventory");
     const rockImages = [
@@ -197,20 +205,23 @@ document.addEventListener("DOMContentLoaded", () => {
     function dropRock() {
         const inventoryItems = inventory.querySelectorAll('.box');
         const randomItem = inventoryItems[Math.floor(Math.random() * inventoryItems.length)];
-
+    
+        // Ensure rocks are only added to items in the inventory
+        if (randomItem.closest('.sorting-box')) return;
+    
         // Create a rock element
         const rock = document.createElement("div");
         rock.classList.add("rockk");
         const rockImage = document.createElement("img");
         rockImage.src = "miscimages/rocksthree.png"; // Replace with your rock image path
         rockImage.alt = "Rock"; // Alt text for accessibility
-
+    
         // Append the image to the rock div
         rock.appendChild(rockImage);
-
+    
         // Set initial click count to 0
         rock.dataset.clicks = 0;
-
+    
         // Add click event to the rock
         rock.addEventListener("click", () => {
             // Increment click count
@@ -220,35 +231,32 @@ document.addEventListener("DOMContentLoaded", () => {
             if (rock.dataset.clicks < rockImages.length) {
                 rockImage.src = rockImages[rock.dataset.clicks]; // Change the image
             }
-
-            // Change cursor temporarily when rock is clicked
-            changeCursorTemporary('cursordowns.png', 3000); // Replace with your cursor image URL
-
+    
             // Remove rock after 3 clicks
             if (rock.dataset.clicks >= 3) {
                 randomItem.removeChild(rock);
-                rocksPresent--; // Decrease the rock count
-
-                // Enable dragging if no rocks are left
+                rocksPresent--; 
+    
                 if (rocksPresent === 0) {
                     enableDragging();
                 }
             }
         });
-
-        // Add the rock over the randomly selected item
-        if (!randomItem.querySelector(".rockk")) { // Avoid double stacking rocks
+    
+        // Ensure no duplicate rocks are added
+        if (!randomItem.querySelector(".rockk")) { 
             randomItem.appendChild(rock);
-            // Trigger the drop animation
+    
+            // Animate the rock placement
             setTimeout(() => {
-                rock.style.top = '0'; // Animate dropping by changing top to 0
-            }, 10); // Delay slightly to allow the rock to be appended before animation
-
-            rocksPresent++; // Increase the rock count
-            disableDragging(); // Disable dragging when a rock is added
+                rock.style.top = '0'; 
+            }, 10); 
+    
+            rocksPresent++; 
+            disableDragging(); 
         }
     }
-
+    
     // Disable dragging on inventory items
     function disableDragging() {
         const inventoryItems = inventory.querySelectorAll('.box');

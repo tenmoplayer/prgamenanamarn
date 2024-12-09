@@ -97,3 +97,34 @@ function checkLevelCompletion() {
         
     }
 }
+const food = document.getElementById('foodadditives');
+const active = document.getElementById('active');
+const cleaning = document.getElementById('cleaning');
+const cosmetics = document.getElementById('cosmetics');
+
+const tip = document.querySelectorAll('.tipmodal');
+
+function showtipfood() {
+    food.style.display = 'block';
+}
+function showtipactive() {
+    active.style.display = 'block';
+}
+function showtipclean() {
+    cleaning.style.display = 'block';
+}
+function showtipcosmetics() {
+    cosmetics.style.display = 'block';
+}
+function removetipf() {
+    food.style.display = 'none';
+}
+function removetipa() {
+    active.style.display = 'none';
+}
+function removetipc() {
+    cleaning.style.display = 'none';
+}
+function removetipco() {
+    cosmetics.style.display = 'none';
+}
