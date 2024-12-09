@@ -286,18 +286,6 @@ function countCorrectItemsInBox(boxId) {
     return correctCount === correctItems.length;
 }
 
-function checkLevelCompletion() {
-    const allBoxesCorrect = Array.from(sortingBoxes).every(box => {
-        return countCorrectItemsInBox(box.id);
-    });
-
-    if (allBoxesCorrect) {
-        setTimeout(() => {
-            levelComplete();
-        }, 1000);
-    }
-}
-
 function showPopup() {
     const popup = document.getElementById('popup');
     popup.classList.add('visible');
