@@ -222,11 +222,6 @@ button {
 button:hover {
     opacity: 50%;
 }
-.rock {
-    position: absolute;
-    z-index: 100; 
-    transition: bottom 0.5s;
-}
 
 @keyframes fall {
     0% {
@@ -256,12 +251,6 @@ button:hover {
     height: 100%;
     pointer-events: none; 
 }
-.rock {
-    position: absolute;
-    z-index: 100;
-    transition: bottom 0.5s; 
-}
-
 .debris {
     position: absolute;
     z-index: 100;
@@ -272,11 +261,7 @@ button:hover {
     10%, 30%, 50%, 70%, 90% { transform: translate(-10px, -10px); }
     20%, 40%, 60%, 80% { transform: translate(10px, 10px); }
   }
-  
-  
-  .shake {
-    animation: shake 0.5s ease-in-out;
-  }
+
   .rockk {
     position: absolute;
     top: -100px; 
@@ -412,3 +397,5 @@ button:hover {
 .timer-container h2 {
     font-size: 40px;
 }
+
+  

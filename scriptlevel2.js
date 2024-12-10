@@ -11,8 +11,6 @@ const livesDisplay = document.getElementById('lives');
 const water = document.getElementById('water');
 const watertwo = document.getElementById('watertwo');
 const timerDisplay = document.getElementById('timer');
-const incorrectDropSound = new Audio('buzz.mp3');
-const correctDropSound = new Audio('correct.mp3');
 const maxTime = 55; 
 
 const hiddenItemsCount = 6; 
@@ -55,7 +53,6 @@ function initGame() {
     audio.loop = true; // Ensure the BGM loops
     audio.play();
     startTimer();
-
 }
 
 function startTimer() {
@@ -388,5 +385,24 @@ function checkLevelFail() {
     if (modal) modal.style.display = 'block';
 }
 
+function displayCompletionModal() {
+    const timeTaken = maxTime - timer; 
+    const completionModal = document.getElementById('completionModal');
+    const timeDisplay = document.createElement('p');
+    timeDisplay.textContent = ``;
+    completionModal.querySelector('.modal-content').appendChild(timeDisplay);
+    localStorage.setItem('completedLevel', '2');
+    const rewardImage = completionModal.querySelector('#treasureimg');
+    const duplicationCount = Math.max(1, Math.floor((maxTime - timeTaken) / 9)); 
 
+    for (let i = 1; i < duplicationCount; i++) { 
+        const duplicateImage = rewardImage.cloneNode(true);
+        completionModal.querySelector('.treasurecontainer').appendChild(duplicateImage);
+    }
+
+    completionModal.style.display = 'block';
+    audio = new Audio('congrats.mp3');  // Initialize the audio object
+    audio.play();
+    stopTimer();
+}
 window.onload = initGame;

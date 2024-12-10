@@ -1,3 +1,6 @@
+body {
+    overflow: hidden;
+}
 .modal {
     display: none; /* Hidden by default */
     position: absolute; /* Stay in place */
@@ -503,3 +506,35 @@
         height: 750%;
     }
 }
+
+.sorting-title {
+    cursor: pointer;
+}
+.rock {
+    position: absolute;
+    top: -100px; /* Start above the container */
+    will-change: transform;
+    transition: transform 2s linear; /* Controls fall duration */
+  }
+  .containertao {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  @keyframes screen-shake {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-10px, -10px); }
+    20% { transform: translate(10px, -10px); }
+    30% { transform: translate(-10px, 10px); }
+    40% { transform: translate(10px, 10px); }
+    50% { transform: translate(-10px, 0); }
+    60% { transform: translate(10px, 0); }
+    70% { transform: translate(0, -10px); }
+    80% { transform: translate(0, 10px); }
+    90% { transform: translate(-10px, -10px); }
+  }
+  
+  .screen-shake {
+    animation: screen-shake 0.5s ease infinite;
+  }

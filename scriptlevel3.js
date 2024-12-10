@@ -8,8 +8,6 @@ let timerInterval;
 let totalTime;
 const livesDisplay = document.getElementById('lives');
 const timerDisplay = document.getElementById('timer');
-const incorrectDropSound = new Audio('debris.mp3');
-const correctDropSound = new Audio('correct.mp3');
 let audio; // Declare audio in a global scope
 const hiddenItemsCount = 6; 
 const visibleItems = []; 
@@ -158,6 +156,8 @@ function dropInBox(e) {
         timer = Math.max(timer - 10, 0);
         lives = Math.max(lives - 1, 0);
         livesDisplay.textContent = lives;
+        shakeScreen();
+        dropMassiveRocks();
         showEffect('minus');
         
         if (lives === 0) {
@@ -173,11 +173,12 @@ function dropInBox(e) {
             const tao = document.getElementById('avatar');
             if (tao) tao.src = 'CSS_Folder/lvl1-2.gif';
         }
-        playWrongSound();
+        playWrongSoundrock();
         displayErrorImage(e.clientX, e.clientY);
         updateTimerDisplay();
     }
 }
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -194,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
         // Ensure rocks are only added to items in the inventory
         if (randomItem.closest('.sorting-box')) return;
-    
+        disableDragging();
         // Create a rock element
         const rock = document.createElement("div");
         rock.classList.add("rockk");
@@ -217,12 +218,18 @@ document.addEventListener("DOMContentLoaded", () => {
             if (rock.dataset.clicks < rockImages.length) {
                 rockImage.src = rockImages[rock.dataset.clicks]; // Change the image
             }
-    
+            if (rock.dataset.clicks == 1) {
+                playSound("rockimpact2.mp3");
+            }
+            if (rock.dataset.clicks == 2) {
+                playSound("rockimpact.mp3")
+            }
             // Remove rock after 3 clicks
             if (rock.dataset.clicks >= 3) {
                 randomItem.removeChild(rock);
-                rocksPresent--; 
+                playSound("rockimpact3.mp3");
     
+                rocksPresent--; 
                 if (rocksPresent === 0) {
                     enableDragging();
                 }
@@ -382,5 +389,35 @@ function hidePopup1() {
     const popup = document.getElementById('popup1');
     popup.classList.remove('visible');
 }
+function shakeScreen(duration = 500) {
+    const body = document.body;
+  
+    // Add the shaking class
+    body.classList.add("screen-shake");
+  
+    // Remove the shaking class after the specified duration
+    setTimeout(() => {
+      body.classList.remove("screen-shake");
+    }, duration);
+  }
+  function displayCompletionModal() {
+    const timeTaken = maxTime - timer; 
+    const completionModal = document.getElementById('completionModal');
+    const timeDisplay = document.createElement('p');
+    timeDisplay.textContent = ``;
+    completionModal.querySelector('.modal-content').appendChild(timeDisplay);
+    localStorage.setItem('completedLevel', '3');
+    const rewardImage = completionModal.querySelector('#treasureimg');
+    const duplicationCount = Math.max(1, Math.floor((maxTime - timeTaken) / 9)); 
 
+    for (let i = 1; i < duplicationCount; i++) { 
+        const duplicateImage = rewardImage.cloneNode(true);
+        completionModal.querySelector('.treasurecontainer').appendChild(duplicateImage);
+    }
+
+    completionModal.style.display = 'block';
+    audio = new Audio('congrats.mp3');  // Initialize the audio object
+    audio.play();
+    stopTimer();
+}
 initGame();

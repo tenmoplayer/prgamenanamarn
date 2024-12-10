@@ -4,15 +4,13 @@ const sortingBoxes = document.querySelectorAll('.sorting-box');
 let lives = 1;
 let timer = 45; // Set initial timer to the desired countdown time
 let audio;
-
+let gamePaused = true;
 const maxTime = 45;
 let timerInterval;
 let totalTime; 
 let starsAwarded = 0; 
 const livesDisplay = document.getElementById('lives');
 const timerDisplay = document.getElementById('timer');
-const incorrectDropSound = new Audio('debris.mp3');
-const correctDropSound = new Audio('correct.mp3');
 
 // New feature: hidden items
 const hiddenItemsCount = 6; // Number of items visible at once
@@ -176,7 +174,7 @@ function dropInBox(e) {
             const tao = document.getElementById('avatar');
             if (tao) tao.src = 'CSS_Folder/lvl1-2.gif';
         }
-        playWrongSound();
+        playWrongSoundrock();
         displayErrorImage(e.clientX, e.clientY);
         updateTimerDisplay();
     }
@@ -231,12 +229,18 @@ document.addEventListener("DOMContentLoaded", () => {
             if (rock.dataset.clicks < rockImages.length) {
                 rockImage.src = rockImages[rock.dataset.clicks]; // Change the image
             }
-    
+            if (rock.dataset.clicks == 1) {
+                playSound("rockimpact2.mp3");
+            }
+            if (rock.dataset.clicks == 2) {
+                playSound("rockimpact.mp3")
+            }
             // Remove rock after 3 clicks
             if (rock.dataset.clicks >= 3) {
                 randomItem.removeChild(rock);
-                rocksPresent--; 
+                playSound("rockimpact3.mp3");
     
+                rocksPresent--; 
                 if (rocksPresent === 0) {
                     enableDragging();
                 }
@@ -378,7 +382,25 @@ function connectPopups() {
         }
     });
 }
+function displayCompletionModal() {
+    const timeTaken = maxTime - timer; 
+    const completionModal = document.getElementById('completionModal');
+    const timeDisplay = document.createElement('p');
+    timeDisplay.textContent = ``;
+    completionModal.querySelector('.modal-content').appendChild(timeDisplay);
+    const rewardImage = completionModal.querySelector('#treasureimg');
+    const duplicationCount = Math.max(1, Math.floor((maxTime - timeTaken) / 9)); 
 
+    for (let i = 1; i < duplicationCount; i++) { 
+        const duplicateImage = rewardImage.cloneNode(true);
+        completionModal.querySelector('.treasurecontainer').appendChild(duplicateImage);
+    }
+
+    completionModal.style.display = 'block';
+    audio = new Audio('congrats.mp3');  // Initialize the audio object
+    audio.play();
+    stopTimer();
+}
 // Run the function to connect all popups after the DOM content is loaded
 document.addEventListener('DOMContentLoaded', connectPopups);
 

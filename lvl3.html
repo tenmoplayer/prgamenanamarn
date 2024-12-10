@@ -20,33 +20,6 @@
         <button class="settings-button" onclick="toggleSettingsMenu()">
             <img src="buttons/pauselegit.png"/>
         </button>
-
-        <script>
-            let bgm; // Declare the BGM variable globally
-        
-            // Initialize and play the BGM
-            function initBGM() {
-                bgm = new Audio('lvl1bgm.mp3'); // Path to your BGM file
-                bgm.loop = true; // Set the audio to loop
-                bgm.volume = 0.5; // Adjust volume (range: 0.0 to 1.0)
-                bgm.play(); // Start playback
-            }
-        
-            // Toggle BGM (mute/unmute)
-            function toggleMuteBGM() {
-                if (bgm) {
-                    bgm.muted = !bgm.muted; // Toggle the mute state
-                    const bgmButton = document.getElementById('mutebgm');
-                    // Update button image based on the muted state
-                    bgmButton.src = bgm.muted ? 'buttons/bgm.png' : 'buttons/bgm.png'; 
-                }
-            }
-        
-            // Play BGM when the page loads
-            window.onload = () => {
-                initBGM(); // Start the BGM when the page loads
-            };
-        </script>
         
 
         <div id="settingsModal" class="modal">
@@ -72,6 +45,8 @@
         <div class="main-container">
             <h1 class="levelbelow">Level 3</h1>
             <div class="stickman-box">
+
+                <div class="containertao" id="rock-container"></div>
 
                 <img src="CSS_Folder/lvl3-4.gif" draggable="false" style="height: 75%; user-select: none;" id="avatar">
                 <div class="lives-container">

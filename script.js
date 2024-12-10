@@ -187,3 +187,23 @@ function retryLevel() {
 function openLevelMenu() {
     location.href = 'levelsection.html';
 }
+function displayCompletionModal() {
+    const timeTaken = maxTime - timer; 
+    const completionModal = document.getElementById('completionModal');
+    const timeDisplay = document.createElement('p');
+    timeDisplay.textContent = ``;
+    completionModal.querySelector('.modal-content').appendChild(timeDisplay);
+    localStorage.setItem('completedLevel', '1');
+    const rewardImage = completionModal.querySelector('#treasureimg');
+    const duplicationCount = Math.max(1, Math.floor((maxTime - timeTaken) / 9)); 
+
+    for (let i = 1; i < duplicationCount; i++) { 
+        const duplicateImage = rewardImage.cloneNode(true);
+        completionModal.querySelector('.treasurecontainer').appendChild(duplicateImage);
+    }
+
+    completionModal.style.display = 'block';
+    audio = new Audio('congrats.mp3');  // Initialize the audio object
+    audio.play();
+    stopTimer();
+}

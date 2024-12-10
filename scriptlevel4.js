@@ -178,6 +178,8 @@ function dropInBox(e) {
         timer = Math.max(timer - 10, 0);
         lives = Math.max(lives - 1, 0);
         livesDisplay.textContent = lives;
+        shakeScreen();
+        dropMassiveRocks();
         showEffect('minus');
         if (lives === 0) {
             clearInterval(timerInterval);
@@ -190,12 +192,23 @@ function dropInBox(e) {
             const tao = document.getElementById('avatar');
             if (tao) tao.src = 'CSS_Folder/lvl1-2.gif';
         }
-        playWrongSound();
+        playWrongSoundrock();
         displayErrorImage(e.clientX, e.clientY);
         updateTimerDisplay();
     }
 }
-
+function shakeScreen(duration = 500) {
+    const body = document.body;
+  
+    // Add the shaking class
+    body.classList.add("screen-shake");
+  
+    // Remove the shaking class after the specified duration
+    setTimeout(() => {
+      body.classList.remove("screen-shake");
+    }, duration);
+  }
+  
 function playSound(src) {
     const audio = new Audio(src);
     audio.play();
@@ -338,5 +351,24 @@ function hidePopup4() {
     const popup = document.getElementById('popup4');
     popup.classList.remove('visible');
 }
+function displayCompletionModal() {
+    const timeTaken = maxTime - timer; 
+    const completionModal = document.getElementById('completionModal');
+    const timeDisplay = document.createElement('p');
+    timeDisplay.textContent = ``;
+    completionModal.querySelector('.modal-content').appendChild(timeDisplay);
+    localStorage.setItem('completedLevel', '4');
+    const rewardImage = completionModal.querySelector('#treasureimg');
+    const duplicationCount = Math.max(1, Math.floor((maxTime - timeTaken) / 9)); 
 
+    for (let i = 1; i < duplicationCount; i++) { 
+        const duplicateImage = rewardImage.cloneNode(true);
+        completionModal.querySelector('.treasurecontainer').appendChild(duplicateImage);
+    }
+
+    completionModal.style.display = 'block';
+    audio = new Audio('congrats.mp3');  // Initialize the audio object
+    audio.play();
+    stopTimer();
+}
 initGame();

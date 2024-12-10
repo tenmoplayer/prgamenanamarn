@@ -15,6 +15,9 @@ function toggleMuteBGM() {
         console.log("BGM muted");
     }
 }
+const correctDropSound = new Audio('correct.mp3');
+const incorrectDropSound = new Audio('buzz.mp3');
+const incorrectDropSoundrock = new Audio('deebris.mp3');
 function toggleMuteSFX() {
     const muteButton = document.getElementById('mutesfx');
     
@@ -40,12 +43,13 @@ function stopTimer() {
     clearInterval(timerInterval); // Stops the timer
 }
 function playWrongSound() {
-    const audio = new Audio('buzz.mp3');
-    audio.play();
+    incorrectDropSound.play();
+}
+function playWrongSoundrock() {
+    incorrectDropSoundrock.play();
 }
 function playCorrectSound() {
-    const audio = new Audio('correct.mp3');
-    audio.play();
+    correctDropSound.play();
 }
 
 

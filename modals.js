@@ -1,24 +1,5 @@
 
-function displayCompletionModal() {
-    const timeTaken = maxTime - timer; 
-    const completionModal = document.getElementById('completionModal');
-    const timeDisplay = document.createElement('p');
-    timeDisplay.textContent = ``;
-    completionModal.querySelector('.modal-content').appendChild(timeDisplay);
 
-    const rewardImage = completionModal.querySelector('#treasureimg');
-    const duplicationCount = Math.max(1, Math.floor((maxTime - timeTaken) / 9)); 
-
-    for (let i = 1; i < duplicationCount; i++) { 
-        const duplicateImage = rewardImage.cloneNode(true);
-        completionModal.querySelector('.treasurecontainer').appendChild(duplicateImage);
-    }
-
-    completionModal.style.display = 'block';
-    audio = new Audio('congrats.mp3');  // Initialize the audio object
-    audio.play();
-    stopTimer();
-}
 function closeStartModal() {
     const content = document.querySelector('.startcontent');
     const modal = document.getElementById('startModal');
@@ -97,34 +78,47 @@ function checkLevelCompletion() {
         
     }
 }
-const food = document.getElementById('foodadditives');
-const active = document.getElementById('active');
-const cleaning = document.getElementById('cleaning');
-const cosmetics = document.getElementById('cosmetics');
+function dropRock() {
+    const container = document.getElementById("rock-container");
 
-const tip = document.querySelectorAll('.tipmodal');
+    // Create a new rock image
+    const rock = document.createElement("img");
+    rock.src = "miscimages/rocks1.png"; // Replace with your rock image URL
+    rock.alt = "Rock";
+    rock.classList.add("rock");
 
-function showtipfood() {
-    food.style.display = 'block';
-}
-function showtipactive() {
-    active.style.display = 'block';
-}
-function showtipclean() {
-    cleaning.style.display = 'block';
-}
-function showtipcosmetics() {
-    cosmetics.style.display = 'block';
-}
-function removetipf() {
-    food.style.display = 'none';
-}
-function removetipa() {
-    active.style.display = 'none';
-}
-function removetipc() {
-    cleaning.style.display = 'none';
-}
-function removetipco() {
-    cosmetics.style.display = 'none';
-}
+    // Randomize rock size, rotation, and horizontal position
+    const size = Math.random() * 40 + 20; // Random size between 20px and 60px
+    const rotation = Math.random() * 360; // Random rotation angle
+    const left = Math.random() * (container.offsetWidth - size); // Random horizontal position
+
+    // Apply random transformations
+    rock.style.width = `${size}px`;
+    rock.style.height = `${size}px`;
+    rock.style.transform = `rotate(${rotation}deg)`;
+    rock.style.left = `${left}px`;
+
+    // Append the rock to the container
+    container.appendChild(rock);
+
+    // Trigger the falling animation
+    setTimeout(() => {
+      rock.style.transform = `translateY(${container.offsetHeight + 100}px) rotate(${rotation + 360}deg)`;
+    }, 50);
+
+    // Remove the rock after it falls
+    setTimeout(() => {
+      rock.remove();
+    }, 2000);
+  }
+  function dropMassiveRocks() {
+    // Drop a massive number of rocks (e.g., 50 rocks) at once
+    const numberOfRocks = 50;
+
+    for (let i = 0; i < numberOfRocks; i++) {
+      dropRock(); // Call dropRock() function for each rock
+    }
+  }
+  // Drop a rock every second
+  setInterval(dropRock, 1000);
+

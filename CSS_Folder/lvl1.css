@@ -21,6 +21,7 @@ h2 {
 
 .main-container {
     position: absolute;
+    overflow: visible;
     display: flex;
     justify-content: space-between;
     width: 100vw;
@@ -43,6 +44,7 @@ h2 {
     box-sizing: border-box;
 }
 .sorting-boxes {
+    overflow: visible;
     width: 40vw;
     height: 100%;
     display: grid;
@@ -60,7 +62,7 @@ h2 {
     justify-content: center;
     align-items: center;
     max-height: 100%;
-    overflow: hidden;
+    overflow: visible;
     width: 100%;
     height: 100%;
     border-radius: 20px;
@@ -262,8 +264,8 @@ button:hover {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    color: white;
-    overflow: hidden;
+
+    color:#DA8359; text-shadow: -4px 3px 4px black, 4px 3px 4px black;  overflow: hidden;
     padding-top: 20px;
 }
 .timer-container p {
@@ -273,3 +275,22 @@ button:hover {
 .timer-container h2 {
     font-size: 40px;
 }
+.hover-target {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .sticky-popup {
+    position: absolute;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+    pointer-events: none; /* Prevent blocking cursor interactions */
+    white-space: nowrap;
+  }

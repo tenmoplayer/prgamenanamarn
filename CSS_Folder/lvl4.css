@@ -118,14 +118,12 @@ h2 {
     position: relative;
     z-index: 1001;
 }
-.inventory::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    border: 1px solid #000;
+.inventory::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar */
 }
 .box {
     position: relative;
-    width: 130px;
+    width: 20%;
     height: 150px;
     background-color: transparent;
     display: flex;
@@ -247,7 +245,7 @@ button:hover {
     top: 0;
     left: 0;
     width: 100%;
-    height: 230%;
+    height: 180%;
     background-color: black;
     opacity: 96%;
     pointer-events: none;

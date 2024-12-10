@@ -43,7 +43,7 @@
         <div class="main-container">
             <h1 class="levelbelow">Level 5</h1>
             <div class="stickman-box">
-
+                <div class="containertao" id="rock-container"></div>
                 <img src="CSS_Folder/lvl3-4.gif" draggable="false" style="height: 75%; user-select: none; z-index: 1;" id="avatar">
                 <div class="lives-container">
                     <h2>Lives: <span id="lives">1</span></h2>
@@ -59,20 +59,20 @@
         
             <!-- Active Ingredients -->
             <div class="box" draggable="true" id="item25">
-                <img src="level5pics/ELEMENTS/LVL 5 - SILICON.png" id="img25" onclick="showPopup25()" onmouseout="hidePopup25()" />
+                <img src="level5pics/ELEMENTS/LVL 5 - SILICON.png" id="img25"/>
                 <div class="popup" id="popup25">HINT:<br>Used in silicones for smooth texture and shine in hair and skin products.</div>
             </div>
             
             
             <div class="box" draggable="true" id="item2">
-                <img src="level5pics/ACTIVE INGREDIENTS/CONSUMER PRODUCT (67).png" style="filter: blur(5px);" id="img2" onclick="showPopup2()" onmouseout="hidePopup2()" />
+                <img src="level5pics/ACTIVE INGREDIENTS/CONSUMER PRODUCT (67).png" style="filter: blur(5px);" id="img2"/>
                 <div class="popup" id="popup2">HINT:<br>Helps curing migraines and improves sleep quality.</div>
             </div>
             <div class="box" draggable="true" id="item3">
                 <img src="level5pics/ACTIVE INGREDIENTS/CONSUMER PRODUCT (68).png" id="img3" />
             </div>
             <div class="box" draggable="true" id="item6">
-                <img src="level5pics/CLEANING AGENTS/CLEANING AGENTS (1).png" style="filter: blur(5px);" id="img6" onmouseover="showPopup6()" onmouseout="hidePopup6()" />
+                <img src="level5pics/CLEANING AGENTS/CLEANING AGENTS (1).png" style="filter: blur(5px);" id="img6"/>
                 <div class="popup" id="popup6">HINT:<br>Softens clotted litter and blockage on drains.</div>
             </div>
             <div class="box" draggable="true" id="item1">
@@ -95,7 +95,7 @@
             
             
             <div class="box" draggable="true" id="item10">
-                <img src="level5pics/CLEANING AGENTS/CONSUMER PRODUCT (70).png" style="filter: blur(5px);" id="img10" onmouseover="showPopup10()" onmouseout="hidePopup10()" />
+                <img src="level5pics/CLEANING AGENTS/CONSUMER PRODUCT (70).png" style="filter: blur(5px);" id="img10" />
                 <div class="popup" id="popup10">HINT:<br>Softens molds for easier bathroom cleaning.</div>
             </div>
         
@@ -108,7 +108,7 @@
                 <img src="level5pics/CLEANING AGENTS/CONSUMER PRODUCT (67).png" id="img8" />
             </div>
             <div class="box" draggable="true" id="item14">
-                <img src="level5pics/FOOD ADDITIVES/CONSUMER PRODUCT (69).png" style="filter: brightness(0%) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));" id="img14" onmouseover="showPopup14()" onmouseout="hidePopup14()" />
+                <img src="level5pics/FOOD ADDITIVES/CONSUMER PRODUCT (69).png" style="filter: brightness(0%) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));" id="img14"/>
                 <div class="popup" id="popup14">HINT:<br>Transports higher temperatures than water while adding flavor.</div>
             </div>
             <div class="box" draggable="true" id="item15">
@@ -118,28 +118,28 @@
                 <img src="level5pics/COSMETICS/COSMETICS (2).png" id="img22" />
             </div>
             <div class="box" draggable="true" id="item16">
-                <img src="level5pics/FOOD ADDITIVES/CONSUMER PRODUCT (71).png" style="filter: blur(5px);" id="img16" onmouseover="showPopup16()" onmouseout="hidePopup16()" />
+                <img src="level5pics/FOOD ADDITIVES/CONSUMER PRODUCT (71).png" style="filter: blur(5px);" id="img16" />
                 <div class="popup" id="popup16">HINT:<br>Changes the color of food, making it more appealing.</div>
             </div>
         
             <!-- Cosmetics -->
             
             <div class="box" draggable="true" id="item18" >
-                <img src="level5pics/COSMETICS/CONSUMER PRODUCT (67).png" style="filter: blur(5px);" id="img18" onmouseover="showPopup18()" onmouseout="hidePopup18()" />
+                <img src="level5pics/COSMETICS/CONSUMER PRODUCT (67).png" style="filter: blur(5px);" id="img18"  />
                 <div class="popup" id="popup18">HINT:<br>Cleanses and moisturizes the face.</div>
             </div>
             <div class="box" draggable="true" id="item13">
                 <img src="level5pics/FOOD ADDITIVES/CONSUMER PRODUCT (68).png" id="img13" />
             </div>
             <div class="box" draggable="true" id="item19">
-                <img src="level5pics/COSMETICS/CONSUMER PRODUCT (68).png" style="filter: blur(5px);" id="img19" onmouseover="showPopup19()" onmouseout="hidePopup19()" />
+                <img src="level5pics/COSMETICS/CONSUMER PRODUCT (68).png" style="filter: blur(5px);" id="img19" />
                 <div class="popup" id="popup19">HINT:<br>Reduces itchiness and moisturizes dry skin underneath the beard.</div>
             </div>
             <div class="box" draggable="true" id="item20">
                 <img src="level5pics/COSMETICS/CONSUMER PRODUCT (69).png" id="img20" />
             </div>
             <div class="box" draggable="true" id="item26">
-                <img src="level5pics/ELEMENTS/LVL 5 - BORON.png" id="img26" onmouseover="showPopup26()" onmouseout="hidePopup26()" />
+                <img src="level5pics/ELEMENTS/LVL 5 - BORON.png" id="img26" />
                 <div class="popup" id="popup26">HINT:<br>Sometimes used in anti-inflammatory medications and supplements.</div>
             </div>
             <div class="box" draggable="true" id="item21">
@@ -149,18 +149,18 @@
         
             <!-- Elements -->
             <div class="box" draggable="true" id="item23">
-                <img src="level5pics/ELEMENTS/LVL 5 - CHROMIUM.png" id="img23" onmouseover="showPopup23()" onmouseout="hidePopup23()" />
+                <img src="level5pics/ELEMENTS/LVL 5 - CHROMIUM.png" id="img23" />
                 <div class="popup" id="popup23">HINT:<br>Used in dietary supplements for glucose metabolism support.</div>
             </div>
             <div class="box" draggable="true" id="item9">
                 <img src="level5pics/CLEANING AGENTS/CONSUMER PRODUCT (68).png" id="img9" />
             </div>
             <div class="box" draggable="true" id="item24">
-                <img src="level5pics/ELEMENTS/LVL 5 - MANGANESE.png" id="img24" onmouseover="showPopup24()" onmouseout="hidePopup24()" />
+                <img src="level5pics/ELEMENTS/LVL 5 - MANGANESE.png" id="img24" />
                 <div class="popup" id="popup24">HINT:<br>Used in formulations for its catalytic properties in removing stains.</div>
             </div>
             <div class="box" draggable="true" id="item17">
-                <img src="level5pics/COSMETICS/CONSUMER PRODUCT (66).png" style="filter: blur(5px);" id="img17" onmouseover="showPopup17()" onmouseout="hidePopup17()" />
+                <img src="level5pics/COSMETICS/CONSUMER PRODUCT (66).png" style="filter: blur(5px);" id="img17"/>
                 <div class="popup" id="popup17">HINT:<br>Moisturizes and nourishes the lips.</div>
             </div>
             
